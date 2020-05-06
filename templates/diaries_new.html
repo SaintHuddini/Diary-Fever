@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action="{{ url_for('diaries_submit') }}">
+    <fieldset>
+    <legend>New Playlist</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Title</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+        <label for='mood'>Mood</label><br>
+        <input type='text' name='mood' />
+    </p>
+    <p>
+        <label for='entry'>Entry</label><br>
+        <input type='text' name='entry' />
+    </p>
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save Entry</button>
+    </p>
+</form>
+{% endblock %}

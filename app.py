@@ -20,6 +20,23 @@ def diary():
     return render_template('diary.html', diaries=mongo.db.diaries.find())
 
 
+@app.route('/diaries/new')
+def playlists_new():
+    # Create a new diary
+    return render_template('diaries_new.html')
+
+
+@app.route('/diaries', methods=['POST'])
+def diaries_submit():
+    # Submitting a new Entry
+    diaries = mongo.db.diaries
+    diaries.insert_one(request.form.to_dict())
+    return redirect(url_for('diary'))
+
+
+
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
