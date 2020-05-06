@@ -1,21 +1,23 @@
 import os
 from flask import Flask, render_template, request, url_for, redirect
+from flask_pymongo import PyMongo
+import env
 
 
 app = Flask(__name__)
+app.config["MONGO_DBNAME"] = 'DiaryDB'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
+mongo = PyMongo(app)
 
-
-diarys = [
-    { 'title': 'Hello world!', 'mood': 'happy', 'entry': 'A new day and a new beginning.'},
-    { 'title': 'A buggy day', 'mood': 'tired', 'entry': 'Full of bugs and roadblocks.'}
-]
+print(os.getenv('MONGO_URI', 'mongodb://localhost'))
+app.secret_key = "secretkey"
 
 
 @app.route('/')
 @app.route('/home')
 def diary():
     # Shows user the diary
-    return render_template('diary.html', diarys=diarys)
+    return render_template('diary.html', diaries=mongo.db.diaries.find())
 
 
 if __name__ == "__main__":

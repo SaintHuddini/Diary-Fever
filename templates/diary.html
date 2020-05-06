@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for diary in diarys %}
+    {% for diary in diaries %}
     <h1>{{diary.title}}</h1>
     <small><strong>{{ diary.mood }}</strong></small>
     <p> {{diary.entry}}</p>
