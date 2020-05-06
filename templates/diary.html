@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello there!</h1>
+    {% for diary in diarys %}
+    <h1>{{diary.title}}</h1>
+    <small><strong>{{ diary.mood }}</strong></small>
+    <p> {{diary.entry}}</p>
+    {% endfor %}
 {% endblock %}
