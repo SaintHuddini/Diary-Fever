@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h1><user>'s Diary</h1>
+<h1>Diary</h1>
 
 <a href="/diaries/new">New Entry</a>
 
     {% for diary in diaries %}
-    <h2>{{diary.title}}</h2>
+    <h2><a href="/diaries/{{ diary._id }}">{{ diary.title }}</a></h2>
     <small><strong>{{ diary.mood }}</strong></small>
-    <p> {{diary.entry}}</p>
+    <p> {{ diary.entry }}</p>
     {% endfor %}
 {% endblock %}

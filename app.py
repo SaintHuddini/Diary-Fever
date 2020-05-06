@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, url_for, redirect
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 import env
 
 
@@ -16,7 +17,7 @@ app.secret_key = "secretkey"
 @app.route('/')
 @app.route('/home')
 def diary():
-    # Shows user the diary
+    # Shows user the diaries
     return render_template('diary.html', diaries=mongo.db.diaries.find())
 
 
@@ -32,6 +33,14 @@ def diaries_submit():
     diaries = mongo.db.diaries
     diaries.insert_one(request.form.to_dict())
     return redirect(url_for('diary'))
+
+
+@app.route('/diaries/<diary_id>')
+def diaries_show(diary_id):
+    # Shows a single diary
+    diary = mongo.db.diaries.find_one({'_id': ObjectId(diary_id)})
+    return render_template('diaries_show.html', diary=diary)
+
 
 
 
