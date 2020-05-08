@@ -1,19 +1,22 @@
 {% extends 'base.html' %} {% block content %}
-<form method="POST" action="{{ url_for('diaries_submit') }}">
+<form
+  method="POST"
+  action="{{ url_for('diaries_update', diary_id=diary._id) }}"
+>
   <fieldset>
     <legend>New Entry</legend>
     <!-- TITLE -->
     <p>
       <label for="title">Title</label><br />
-      <input type="text" name="title" />
+      <input type="text" name="title" value="{{ diary.title }}" />
     </p>
     <p>
       <label for="mood">Mood</label><br />
-      <input type="text" name="mood" />
+      <input type="text" name="mood" value="{{ diary.mood }}" />
     </p>
     <p>
       <label for="entry">Entry</label><br />
-      <input type="text" name="entry" />
+      <input type="text" name="entry" value="{{ diary.entry }}" />
     </p>
   </fieldset>
 

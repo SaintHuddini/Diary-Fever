@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
->
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1>{{ diary.title }}</h1>
 <small><strong>{{ diary.mood }}</strong></small>
-<p> {{ diary.entry }}</p>
+<p>{{ diary.entry }}</p>
+<a href="{{url_for('diaries_edit', diary_id= diary._id)}}">Edit Entry</a>
 {% endblock %}
