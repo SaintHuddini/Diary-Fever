@@ -3,4 +3,7 @@
 <small><strong>{{ diary.mood }}</strong></small>
 <p>{{ diary.entry }}</p>
 <a href="{{url_for('diaries_edit', diary_id= diary._id)}}">Edit Entry</a>
+<p><form method='POST' action="{{url_for('diaries_delete', diary_id= diary._id)}}">
+    <button type='submit'>Delete</button>
+</form></p>
 {% endblock %}

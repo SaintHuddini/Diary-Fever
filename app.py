@@ -68,6 +68,14 @@ def diaries_edit(diary_id):
     return render_template('diaries_edit.html', diary=the_diary, diaries=all_diaries)
 
 
+@app.route('/diaries/<diary_id>/delete', methods=['POST'])
+def diaries_delete(diary_id):
+    # Delete one diary.
+    diaries  = mongo.db.diaries
+    diaries.delete_one({'_id': ObjectId(diary_id)})
+    return redirect(url_for('diary'))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
