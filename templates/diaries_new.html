@@ -1,25 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<form method="POST" action="{{ url_for('diaries_submit') }}">
-  <fieldset>
-    <legend>New Entry</legend>
-    <!-- TITLE -->
-    <p>
-      <label for="title">Title</label><br />
-      <input type="text" name="title" />
-    </p>
-    <p>
-      <label for="mood">Mood</label><br />
-      <input type="text" name="mood" />
-    </p>
-    <p>
-      <label for="entry">Entry</label><br />
-      <input type="text" name="entry" />
-    </p>
-  </fieldset>
 
-  <!-- BUTTON -->
+<h1>New Entry</h1>
+<form method="POST" action="{{ url_for('diaries_submit') }}">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" name="title" class="form-control" placeholder="Give me a name!">
+  </div>
+  <div class="form-group">
+    <label for="mood">Mood:</label>
+    <input type="text" name="mood" class="form-control" placeholder="How are you feeling 😃">
+  </div>
+  <div class="form-group">
+    <label for="entry">Entry:</label>
+    <textarea class="form-control" name="entry" rows="5" placeholder="What's on your thoughts...💭"></textarea>
+  </div>
   <p>
-    <button type="submit">Save Entry</button>
+<button type="submit" class="btn btn-edit">Save Entry</button>
   </p>
 </form>
 {% endblock %}

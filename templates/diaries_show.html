@@ -1,9 +1,14 @@
 {% extends 'base.html' %} {% block content %}
-<h1>{{ diary.title }}</h1>
-<small><strong>{{ diary.mood }}</strong></small>
-<p>{{ diary.entry }}</p>
-<a href="{{url_for('diaries_edit', diary_id= diary._id)}}">Edit Entry</a>
-<p><form method='POST' action="{{url_for('diaries_delete', diary_id= diary._id)}}">
-    <button type='submit'>Delete</button>
-</form></p>
+<main role="main" class="inner cover text-center">
+    <h1 class="cover-heading display-3">{{ diary.title }}  <small class="h5">{{ diary.mood }}</small></h1>
+    <p class="lead">{{ diary.entry }}</p>
+    <form method='POST' action="{{url_for('diaries_delete', diary_id= diary._id)}}">
+    <a href="{{url_for('diaries_edit', diary_id= diary._id)}}"><button type="button" class="btn btn-edit">Edit Entry</button></a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+      
+</form>
+
+  </main>
+
+ 
 {% endblock %}

@@ -1,0 +1,110 @@
+body {
+  background-color: beige;
+}
+
+/* Brands and titles */
+
+a.navbar-brand {
+  color: rgb(141, 74, 74);
+}
+
+h1 {
+  text-align: center;
+  margin: 1.5em 0 1em 0;
+}
+
+/* End of B & T */
+
+/* Buttons */
+
+nav button.btn {
+  background-color: rgb(141, 74, 74);
+  color: beige;
+}
+
+.btn.btn-show {
+  background-color: beige;
+  color: rgb(141, 74, 74);
+}
+
+button.btn-edit {
+  color: beige;
+  background-color: rgb(141, 74, 74);
+}
+
+button.btn a {
+  color: beige;
+}
+/* end of buttons */
+
+/* Main Page For Cards */
+
+div.card {
+  background-color: beige;
+}
+
+/* Doing a border line with the darker shade of rosybrown and some space between them */
+div.card-body {
+  border: 3px solid rgb(141, 74, 74);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+h6.card-subtitle {
+  float: right;
+  color: rgb(141, 74, 74);
+}
+
+/* Making the text overflow hidden with ... after */
+p.diaries-entry.overflow-hidden {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 2.5em;
+}
+
+/* end of main page for cards */ 
+
+
+small {
+  color: rgb(141, 74, 74);
+}
+
+hr {
+  margin-top: 8px;
+  margin-block-end: 0;
+  border-top: 4px solid rgb(141, 74, 74);
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #653131;
+  text-decoration-line: none;
+}
+
+
+nav button.btn:hover {
+  color: rgb(141, 74, 74);
+  background-color: beige;
+}
+
+.btn.btn-show:hover {
+  color: black;
+  
+}
+
+button.btn-edit:hover {
+  background: beige;
+  color: rgb(141, 74, 74);
+}
+
+button.btn a:hover{
+  background: beige;
+}
+
+button.btn.btn-danger:hover{
+    background-color: beige;
+    color: #dc3545;
+}
