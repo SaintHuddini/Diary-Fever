@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 
-<h1>Edit Entry</h1>
+
 <form method="POST" action="{{ url_for('diaries_update', diary_id=diary._id) }}">
   <div class="form-group">
     <label for="title">Title:</label>

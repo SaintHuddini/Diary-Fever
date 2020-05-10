@@ -3,8 +3,6 @@ from flask import Flask, render_template, request, url_for, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import env
-import datetime
-
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'DiaryDB'
@@ -19,14 +17,14 @@ app.secret_key = "secretkey"
 @app.route('/home')
 def diary():
     # Shows user the diaries
-    return render_template('diary.html', diaries=mongo.db.diaries.find())
+    return render_template('diary.html', diaries=mongo.db.diaries.find(), title='Welcome')
 
 
 # New Diary Route
 @app.route('/diaries/new')
 def playlists_new():
     # Create a new diary
-    return render_template('diaries_new.html')
+    return render_template('diaries_new.html', title='New Entry')
 
 # Diary Submit Route
 @app.route('/diaries', methods=['POST'])
@@ -66,7 +64,7 @@ def diaries_update(diary_id):
 def diaries_edit(diary_id):
     the_diary = mongo.db.diaries.find_one({'_id': ObjectId(diary_id)})
     all_diaries = mongo.db.diaries.find()
-    return render_template('diaries_edit.html', diary=the_diary, diaries=all_diaries)
+    return render_template('diaries_edit.html', diary=the_diary, diaries=all_diaries, title='Edit Entry')
 
 
 @app.route('/diaries/<diary_id>/delete', methods=['POST'])

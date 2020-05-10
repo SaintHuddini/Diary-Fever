@@ -19,13 +19,12 @@
     <nav class="navbar">
       <a class="navbar-brand" href="{{url_for('diary')}}">
         <img
-          src="/docs/4.1/assets/brand/bootstrap-solid.svg"
-          width="30"
-          height="30"
+          src="/static/images/brand_logo.png"
+          width="75"
+          height="75"
           class="d-inline-block align-top"
           alt=""
         />
-        Diary Fever
       </a>
       <a href="/diaries/new"><button type="button" class="btn">
        New Entry
@@ -33,11 +32,11 @@
       </a>
     </nav>
 <hr>
-    <header>
+<h1>{{title}}</h1>
       <div class="container">
         {% block content %}{% endblock %}
       </div>
-    </header>
+  
 
     <footer></footer>
     <!-- Jquery version 3.3.1-->
