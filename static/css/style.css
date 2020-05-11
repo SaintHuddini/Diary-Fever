@@ -1,19 +1,19 @@
 body {
   background-color: beige;
+  font-family: 'Josefin Slab', serif;
 }
 
 /* Brands and titles */
 
-a.navbar-brand {
-  color: rgb(141, 74, 74);
-}
-
 h1 {
   text-align: center;
   margin: 1.5em 0 1em 0;
+  font-family: 'Amatic SC', cursive;
 }
 
 /* End of B & T */
+
+
 
 /* Buttons */
 
@@ -53,6 +53,8 @@ div.card-body {
 h6.card-subtitle {
   float: right;
   color: rgb(141, 74, 74);
+  font-family: 'Amatic SC', cursive;
+  font-size: larger;
 }
 
 /* Making the text overflow hidden with ... after */
@@ -64,9 +66,13 @@ p.diaries-entry.overflow-hidden {
 
 /* end of main page for cards */ 
 
+p.lead{
+    margin-bottom: 1.4em;
+}
 
 small {
   color: rgb(141, 74, 74);
+  font-family: 'Amatic SC', cursive;
 }
 
 hr {
