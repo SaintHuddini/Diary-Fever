@@ -101,7 +101,7 @@ The structure and responsiveness of the website
 
 ### Tested on Ipad pro, iphone X, Iphone 7/8/9 and normal desktops
 
-Deployment
+## Deployment
 
 1. Create a requirements.txt file - command in the terminal: pip3 freeze — local > requirements.txt
 1. Create a Procfile - command in the terminal: echo web: python run.py > Procfile
