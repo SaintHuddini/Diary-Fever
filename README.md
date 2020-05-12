@@ -10,7 +10,7 @@
 
 ### User Stories
 
-* User story 1 : I can create a new entry 
+* User story 1 : I can create a new diary entry (title, mood and entry)
 * User story 2 : I can read all entries 
 * User story 3 : I can read a single entry.
 * User story 4 : I can edit and update the choosen entry.
@@ -26,7 +26,8 @@ URL | HTTP Verb | Action |
 /diary_update/_:id | PUT/PATCH | Update |
 /diaries_delete/_:id | DELETE | Delete |
 
-![Mockups](/mockups/diaryMockups.pdf)
+Mockups:
+[Mockups](/mockups/diaryMockups.pdf)
 
 
 
@@ -98,3 +99,25 @@ The structure and responsiveness of the website
 
 #### The look of the page doesn't brake on tablets or smaller devices.
 
+### Tested on Ipad pro, iphone X, Iphone 7/8/9 and normal desktops
+
+Deployment
+
+1. Create a requirements.txt file - command in the terminal: pip3 freeze — local > requirements.txt
+1. Create a Procfile - command in the terminal: echo web: python run.py > Procfile
+1. Change debug from True to False.
+1. Login to Heroku. Command in the terminal: heroku login 
+1. Create an new Heroku App
+1. Connect Heroku to repository - command: heroku git:remote -a diary-fever
+1. Create any config variables.
+1. Push the core to Heroku - command in the terminal: echo web: git push -u heroku master
+1. Run the App - command : heroku ps:scale web=1 
+
+
+## Credit
+
+Corey Schafer for his help on flask tutorial - https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g 
+Pretty Printed for his help on MongoDb tutorial - https://www.youtube.com/watch?v=3ZS7LEH_XBg
+Flask Doc - https://flask.palletsprojects.com/en/1.1.x/
+MongoDB Doc - https://docs.mongodb.com/
+Logo from - https://www.freelogodesign.org/
