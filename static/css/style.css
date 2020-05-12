@@ -1,6 +1,6 @@
 body {
   background-color: beige;
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
 }
 
 /* Brands and titles */
@@ -8,12 +8,10 @@ body {
 h1 {
   text-align: center;
   margin: 1.5em 0 1em 0;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
 }
 
 /* End of B & T */
-
-
 
 /* Buttons */
 
@@ -50,10 +48,11 @@ div.card-body {
   text-align: center;
 }
 
+/* Making the subtitle float to the right with the darker shade of rosybrown*/
 h6.card-subtitle {
   float: right;
   color: rgb(141, 74, 74);
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-size: larger;
 }
 
@@ -64,15 +63,15 @@ p.diaries-entry.overflow-hidden {
   margin-top: 2.5em;
 }
 
-/* end of main page for cards */ 
+/* end of main page for cards */
 
-p.lead{
-    margin-bottom: 1.4em;
+p.lead {
+  margin-bottom: 1.4em;
 }
 
 small {
   color: rgb(141, 74, 74);
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
 }
 
 hr {
@@ -90,7 +89,6 @@ a:hover {
   text-decoration-line: none;
 }
 
-
 nav button.btn:hover {
   color: rgb(141, 74, 74);
   background-color: beige;
@@ -98,7 +96,6 @@ nav button.btn:hover {
 
 .btn.btn-show:hover {
   color: black;
-  
 }
 
 button.btn-edit:hover {
@@ -106,11 +103,11 @@ button.btn-edit:hover {
   color: rgb(141, 74, 74);
 }
 
-button.btn a:hover{
+button.btn a:hover {
   background: beige;
 }
 
-button.btn.btn-danger:hover{
-    background-color: beige;
-    color: #dc3545;
+button.btn.btn-danger:hover {
+  background-color: beige;
+  color: #dc3545;
 }

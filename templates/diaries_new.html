@@ -1,21 +1,42 @@
 {% extends 'base.html' %} {% block content %}
 
+<!-- Form for a new entry-->
+
+<!-- This action submits the form to the mongoDB and saves it there-->
 <form method="POST" action="{{ url_for('diaries_submit') }}">
   <div class="form-group">
     <label for="title">Title:</label>
-    <input type="text" name="title" class="form-control" placeholder="Give me a name!" required>
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      placeholder="Give me a name!"
+      required
+    />
   </div>
   <div class="form-group">
     <label for="mood">Mood:</label>
-    <input type="text" name="mood" class="form-control" placeholder="How are you feeling 😃" required>
+    <input
+      type="text"
+      name="mood"
+      class="form-control"
+      placeholder="How are you feeling 😃"
+      required
+    />
   </div>
   <div class="form-group">
     <label for="entry">Entry:</label>
-    <textarea class="form-control" name="entry" rows="5" placeholder="What's on your thoughts...💭" required></textarea>
+    <textarea
+      class="form-control"
+      name="entry"
+      rows="5"
+      placeholder="What's on your thoughts...💭"
+    ></textarea>
   </div>
- 
 
-<a href="{{url_for('diary')}}"><button type="button" class="btn btn-danger">Cancel</button></a>
-<button type="submit" class="btn btn-edit">Save Entry</button> 
+  <a href="{{url_for('diary')}}"
+    ><button type="button" class="btn btn-danger">Cancel</button></a
+  >
+  <button type="submit" class="btn btn-edit">Save Entry</button>
 </form>
 {% endblock %}

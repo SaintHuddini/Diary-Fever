@@ -35,17 +35,24 @@ def diaries_submit():
     return redirect(url_for('diary'))
 
 
-# Diary Show/Edit/Update/Delete Route
+# Diary Show Route
 @app.route('/diaries/<diary_id>')
 def diaries_show(diary_id):
     # Shows a single diary
     diary = mongo.db.diaries.find_one({'_id': ObjectId(diary_id)})
     return render_template('diaries_show.html', diary=diary)
 
+# Diary Edit Route
+@app.route('/diaries_edit/<diary_id>')
+def diaries_edit(diary_id):
+    the_diary = mongo.db.diaries.find_one({'_id': ObjectId(diary_id)})
+    all_diaries = mongo.db.diaries.find()
+    return render_template('diaries_edit.html', diary=the_diary, diaries=all_diaries, title='Edit Entry')
 
+# Diary Update Route
 @app.route('/diary_update/<diary_id>', methods=["POST"])
 def diaries_update(diary_id):
-    # Submit an edited Entry and update the Diary
+    # Submit an edited Entry and updates the Diary
     diaries = mongo.db.diaries
     diaries_update = ({
         'title': request.form.get('title'),
@@ -56,18 +63,11 @@ def diaries_update(diary_id):
     diaries.update_one(
         {'_id': ObjectId(diary_id)},
         {'$set': diaries_update})
-    # take us back to the playlist's show page
+    # take us back to the diary's show page
     return redirect(url_for('diaries_show', diary_id=diary_id))
 
-
-@app.route('/diaries_edit/<diary_id>')
-def diaries_edit(diary_id):
-    the_diary = mongo.db.diaries.find_one({'_id': ObjectId(diary_id)})
-    all_diaries = mongo.db.diaries.find()
-    return render_template('diaries_edit.html', diary=the_diary, diaries=all_diaries, title='Edit Entry')
-
-
-@app.route('/diaries/<diary_id>/delete', methods=['POST'])
+# Diary Delete Route
+@app.route('/diaries_delete/<diary_id>', methods=['POST'])
 def diaries_delete(diary_id):
     # Delete one diary.
     diaries  = mongo.db.diaries

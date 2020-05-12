@@ -1,23 +1,45 @@
 {% extends 'base.html' %} {% block content %}
 
+<!-- Form to edit the entry -->
 
-
-<form method="POST" action="{{ url_for('diaries_update', diary_id=diary._id) }}">
+<!-- This action updates the form and redirects it to the homepage -->
+<form
+  method="POST"
+  action="{{ url_for('diaries_update', diary_id=diary._id) }}"
+>
   <div class="form-group">
     <label for="title">Title:</label>
-    <input type="text" name="title" class="form-control" value="{{ diary.title }}">
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      value="{{ diary.title }}"
+      required
+    />
   </div>
   <div class="form-group">
     <label for="mood">Mood:</label>
-    <input type="text" name="mood" class="form-control" value="{{ diary.mood }}" >
+    <input
+      type="text"
+      name="mood"
+      class="form-control"
+      value="{{ diary.mood }}"
+      required
+    />
   </div>
   <div class="form-group">
     <label for="entry">Entry:</label>
-    <textarea class="form-control" name="entry" rows="5" value="{{ diary.entry }}" >{{ diary.entry }}
+    <textarea
+      class="form-control"
+      name="entry"
+      rows="5"
+      value="{{ diary.entry }}"
+    >
+{{ diary.entry }}
     </textarea>
   </div>
   <p>
-    <button type="submit" class="btn btn-edit">Save Entry</button>
+    <button type="submit" class="btn btn-edit">Save</button>
   </p>
 </form>
 {% endblock %}
