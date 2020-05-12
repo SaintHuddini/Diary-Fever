@@ -1,4 +1,3 @@
-import env
 import os
 
 from bson.objectid import ObjectId
