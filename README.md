@@ -116,8 +116,8 @@ Deployment
 
 ## Credit
 
-Corey Schafer for his help on flask tutorial - https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g 
-Pretty Printed for his help on MongoDb tutorial - https://www.youtube.com/watch?v=3ZS7LEH_XBg
-Flask Doc - https://flask.palletsprojects.com/en/1.1.x/
-MongoDB Doc - https://docs.mongodb.com/
-Logo from - https://www.freelogodesign.org/
+* Corey Schafer for his help on flask tutorial - https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g 
+* Pretty Printed for his help on MongoDb tutorial - https://www.youtube.com/watch?v=3ZS7LEH_XBg
+* Flask Doc - https://flask.palletsprojects.com/en/1.1.x/
+* MongoDB Doc - https://docs.mongodb.com/
+* Logo from - https://www.freelogodesign.org/
